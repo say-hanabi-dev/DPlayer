@@ -3,7 +3,7 @@ import axios from 'axios';
 export default {
     send: (options) => {
         axios
-            .post(options.url, options.data)
+            .post(options.url, options.data, options.config)
             .then((response) => {
                 const data = response.data;
                 if (!data || data.code !== 0) {

@@ -81,7 +81,7 @@ class Danmaku {
         }
     }
 
-    send(dan, callback) {
+    send(dan, callback, config) {
         const danmakuData = {
             token: this.options.api.token,
             id: this.options.api.id,
@@ -94,6 +94,7 @@ class Danmaku {
         this.options.apiBackend.send({
             url: this.options.api.address + 'v3/',
             data: danmakuData,
+            config: config,
             success: callback,
             error: (msg) => {
                 this.options.error(msg || this.options.tran('Danmaku send failed'));

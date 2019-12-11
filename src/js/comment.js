@@ -89,7 +89,8 @@ class Comment {
             () => {
                 this.player.template.commentInput.value = '';
                 this.hide();
-            }
+            },
+            { withCredentials: true }
         );
     }
 }
